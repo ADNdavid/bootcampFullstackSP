@@ -1,0 +1,228 @@
+/* --Contenido:-- */
+/* --1. Importaciones-- */
+/* --2. Variables-- */
+/* --3. Estilos-- */
+
+/* --1. Importaciones-- */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+/* --2. Variables-- */
+:root {
+    --banner: #38a3a5;
+    --card: #edede9;
+    --backgroundPageColor1: #cfd9df;
+    --backgroundPageColor2: #e2ebf0;
+    --nameColor: #22333b;
+}
+
+/* --3. Estilos-- */
+* {
+    /* CSS soft-Reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to top, var(--backgroundPageColor1) 0%, var(--backgroundPageColor2) 100%);
+    font-family: 'Amatic SC', cursive;
+}
+
+header {
+    width: 70vw;
+    height: 14vh;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    padding-left: 4vw;
+    padding-right: 2vw;
+    border-radius: 0% 0% 20px 20px;
+    background-color: var(--banner);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    height: 33vw;
+    width: 33vw;
+    background-color: #e9c46a;
+    z-index: -1;
+    position: absolute;
+    right: -13%;
+    transform: rotate(45deg);
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 5vh;
+    color: var(--nameColor);
+    font-family: "Agency FB", serif;
+}
+
+header aside {
+    width: 50px;
+}
+
+h2 {
+    margin-bottom: 2vh;
+}
+
+p {
+    font-family: 'Shadows Into Light Two', cursive;
+    letter-spacing: 2px;
+    text-align: justify;
+}
+
+main {
+
+    margin: 0 auto;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--card);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.experience img {
+    width: 30%;
+    margin: auto 0;
+}
+
+.logoucc img {
+    width: 30%;
+    margin: auto 0;
+}
+
+.experience div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.contactMe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px;
+    gap: 10px;
+}
+
+.projects img {
+    width: 100%;
+    border-radius: 30% 0%;
+    border: 1px dotted grey;
+}
+
+@media (max-width: 1023px) {
+    /** Mobile design **/
+
+    header {
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        width: 100vw;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    section:nth-child(2n+1) {
+        right: -4%;
+        position: relative;
+        z-index: -1;
+    }
+
+    section:nth-child(2n+2) {
+        left: -4%;
+        position: relative;
+        z-index: -1;
+    }
+
+    section {
+        height: fit-content;
+        margin-bottom: 2vh;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    /** Desktop design **/
+
+    body {
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    main {
+        width: 70vw;
+        height: 82vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "aboutMe experience"
+            "education projects";
+        gap: 2vh;
+        place-items: center;
+        margin-bottom: 2vh;
+    }
+
+    .aboutMe {
+        grid-area: aboutMe;
+    }
+
+    .experience {
+        grid-area: experience;
+    }
+
+    .education {
+        grid-area: education;
+    }
+
+    .projects {
+        grid-area: projects;
+    }
+
+    section:hover {
+        transition: transform 450ms ease-in-out 0ms;
+        transform: scale(1.15);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .contactMe img:hover {
+        transition: transform 450ms ease-in-out 0ms;
+        transform: translate(-20%) scale(1.2);
+    }
+
+    .projects img:hover {
+        transition: transform 450ms ease-in-out 0ms;
+        transform: translate(-5%, -12%) scale(1.1);
+    }
+}
